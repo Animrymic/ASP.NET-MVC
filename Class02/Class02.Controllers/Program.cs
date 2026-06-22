@@ -20,10 +20,25 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+//Conventional method
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+app.MapControllerRoute(
+    "allCourses",
+    pattern: "courses/allcourses",
+    defaults: new
+    {
+        controller = "courses",
+        action = "GetAllCourses"
+    });
+
+app.MapControllerRoute(
+    "course_by_name_with_constraint", 
+    pattern: "courses/{name}",
+    defaults: new { controller = "Courses", action = "GetCourseByName"},
+    constraints: new {name = new MissingFieldException});
 
 app.Run();
