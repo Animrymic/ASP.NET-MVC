@@ -73,6 +73,12 @@ namespace Avenga.ASP.NET.MVC.Class03.DataAccess
                     Id = 3,
                     Name = "ASP.Net MVC",
                     NumberOfClasses = 10
+                },
+                new Course()
+                {
+                    Id = 4,
+                    Name = "Razor",
+                    NumberOfClasses = 10
                 }
             };
         }
