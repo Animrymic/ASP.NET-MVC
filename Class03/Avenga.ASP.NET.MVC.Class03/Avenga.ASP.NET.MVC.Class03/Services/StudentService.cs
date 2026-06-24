@@ -8,7 +8,6 @@ namespace Avenga.ASP.NET.MVC.Class03.Services
         public Student GetStudentWithActiveCourse(int id)
         {
             var student = InMemoryDb.Students.FirstOrDefault(x => x.Id == id);
-
             if (student == null)
             {
                 return null;
@@ -17,4 +16,3 @@ namespace Avenga.ASP.NET.MVC.Class03.Services
             return student;
         }
     }
-}
