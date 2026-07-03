@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="Class06.ToDoApp/Class06.ToDoApp.csproj" />
+  <Project Path="ToDoApp.DataAccess/ToDoApp.DataAccess.csproj" />
+  <Project Path="ToDoApp.Domain/ToDoApp.Domain.csproj" />
 </Solution>
