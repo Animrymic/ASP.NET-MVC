@@ -10,26 +10,49 @@ public class ToDoRepository : IRepository<ToDo>
 {
     public void Create(ToDo entity)
     {
-        throw new NotImplementedException();
+        if (entity == null)
+        {
+            throw new ArgumentNullException(nameof(entity));
+        }
+        entity.Id = StaticDb.Todos.Last().Id + 1;
+        StaticDb.Todos.Add(entity);
     }
-    
+
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        ToDo toDo = StaticDb.Todos.FirstOrDefault(t => t.Id == id);
+        if (toDo == null)
+        {
+            throw new ArgumentException(nameof(id));
+        }
+        StaticDb.Todos.Remove(toDo);
     }
 
     public List<ToDo> GetAll()
     {
-        throw new NotImplementedException();
+        return StaticDb.Todos;
     }
 
     public ToDo GetById(int id)
     {
-        throw new NotImplementedException();
+        var toDo = StaticDb.Todos.FirstOrDefault(t => t.Id == id);
+        if (toDo == null)
+        {
+            throw new ArgumentException(nameof(id));
+        }
+        return toDo;
     }
 
     public void Update(ToDo entity)
     {
-        throw new NotImplementedException();
+        if (entity == null)
+        {
+            throw new ArgumentNullException(nameof(entity));
+        }
+
+        ToDo toDo = GetById(entity.Id);
+        int index = StaticDb.Todos.IndexOf(toDo);
+        StaticDb.Todos[index] = entity;
     }
 }
+
