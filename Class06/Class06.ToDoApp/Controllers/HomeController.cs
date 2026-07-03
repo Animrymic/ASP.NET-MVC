@@ -1,8 +1,8 @@
-using Class06.Workshop.Models;
+using Class06.ToDoApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Class06.Workshop.Controllers
+namespace Class06.ToDoApp.Controllers
 {
     public class HomeController : Controller
     {

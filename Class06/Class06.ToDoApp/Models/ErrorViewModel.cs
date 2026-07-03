@@ -1,4 +1,4 @@
-namespace Class06.Workshop.Models
+namespace Class06.ToDoApp.Models
 {
     public class ErrorViewModel
     {
