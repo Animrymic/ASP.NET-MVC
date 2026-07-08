@@ -1,8 +1,0 @@
-<Solution>
-  <Project Path="Class06.ToDoApp/Class06.ToDoApp.csproj" />
-  <Project Path="ToDoApp.DataAccess/ToDoApp.DataAccess.csproj" />
-  <Project Path="ToDoApp.Domain/ToDoApp.Domain.csproj" />
-  <Project Path="ToDoApp.Mapper/ToDoApp.Mapper.csproj" />
-  <Project Path="ToDoApp.Models/ToDoApp.Models.csproj" />
-  <Project Path="ToDoApp.Services/ToDoApp.Services.csproj" />
-</Solution>
