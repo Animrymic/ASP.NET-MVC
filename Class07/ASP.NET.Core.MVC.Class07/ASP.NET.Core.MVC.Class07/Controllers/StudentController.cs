@@ -52,5 +52,17 @@ namespace ASP.NET.Core.MVC.Class07.Controllers
             var studentVM = Mapper.MapToStudentDetailsVM(student);
             return View("StudentDetails", studentVM);
         }
+
+        [HttpGet("create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost("create")]
+        public IActionResult Create([FromForm] CreateStudentVM createStudentVM)
+        {
+
+        }
     }
 }
