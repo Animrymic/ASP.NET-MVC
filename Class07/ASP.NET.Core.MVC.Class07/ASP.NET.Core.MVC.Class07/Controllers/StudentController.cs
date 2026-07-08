@@ -62,7 +62,12 @@ namespace ASP.NET.Core.MVC.Class07.Controllers
         [HttpPost("create")]
         public IActionResult Create([FromForm] CreateStudentVM createStudentVM)
         {
-
+            if(ModelState.IsValid)
+            {
+                StaticDb.Students.Add(Mapper.MapToStudent(createStudentVM));
+                return RedirectToAction("Index");
+            }
+            return View(createStudentVM);
         }
     }
 }
