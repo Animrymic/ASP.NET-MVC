@@ -8,11 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ToDoApp.DataAccess\ToDoApp.DataAccess.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Implementations\" />
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\ToDoApp.Mapper\ToDoApp.Mapper.csproj" />
+    <ProjectReference Include="..\ToDoApp.Models\ToDoApp.Models.csproj" />
   </ItemGroup>
 
 </Project>

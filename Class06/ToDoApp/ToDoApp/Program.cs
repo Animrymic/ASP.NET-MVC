@@ -9,12 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //DI for repositories
-builder.Services.AddScoped<IRepository<ToDo>, ToDoRepository>();
+builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
 builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
 builder.Services.AddScoped<IRepository<Status>, StatusRepository>();
-
-
-
 
 var app = builder.Build();
 
