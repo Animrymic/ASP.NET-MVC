@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using System.Threading.RateLimiting;
+using ToDoApp.DataAccess;
 using ToDoApp.DataAccess.Imlementations;
 using ToDoApp.DataAccess.Interfaces;
 using ToDoApp.Domain;
@@ -10,10 +12,19 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+//Register Database 
+string connectionString = builder.Configuration.GetConnectionString("ToDoAppConnectionString");
+builder.Services.AddDbContext<ToDoAppDbContext>(options => options.UseSqlServer(connectionString));
+
 //DI for repositories
-builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
-builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
-builder.Services.AddScoped<IRepository<Status>, StatusRepository>();
+//builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
+//builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
+//builder.Services.AddScoped<IRepository<Status>, StatusRepository>();
+
+builder.Services.AddScoped<IToDoRepository, EFToDoRepository>();
+builder.Services.AddScoped<IRepository<Category>, EFCategoryRepository>();
+builder.Services.AddScoped<<Status>, EFStatusRepository>();
 //DI for services
 builder.Services.AddScoped<IToDoService, ToDoService>();
 builder.Services.AddScoped<IFilterService, FilterService>();
