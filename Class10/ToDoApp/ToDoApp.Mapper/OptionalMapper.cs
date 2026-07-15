@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToDoApp.Domain;
+using ToDoApp.Models.Dtos;
 using ToDoApp.Models.ViewModels;
 
 namespace ToDoApp.Mapper
@@ -19,6 +20,24 @@ namespace ToDoApp.Mapper
                 DueDate = todo.DueDate,
                 StatusName = statusName ?? string.Empty,
                 CategoryName = categoryName ?? string.Empty
+            };
+        }
+
+        public static CategoryDto MapToCategoryDto(Category category)
+        {
+            return new CategoryDto
+            {
+                Id = category.Id,
+                Name = category.Name
+            };
+        }
+
+        public static StatusDto MapToStatusDto(Status status)
+        {
+            return new StatusDto
+            {
+                Id = status.Id,
+                Name = status.Name
             };
         }
     }
